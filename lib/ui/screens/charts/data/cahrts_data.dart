@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:exam_6/bloc/cahrt_expanse/chart_expanse_bloc.dart';
 import 'package:exam_6/bloc/cahrt_expanse/chart_expanse_state.dart';
 import 'package:exam_6/bloc/chart_income/chart_income_bloc.dart';
@@ -23,11 +24,11 @@ List<Widget> chartBlocs = [
       if (state is LoadedChartIncomeState) {
         return ChartCreator(
           state: state,
-          centerText: 'Income',
+          centerText: 'Income'.tr(),
         );
       }
-      return const Center(
-        child: Text("Empty data"),
+      return Center(
+        child: Text("Empty data".tr()),
       );
     }),
   ),
@@ -47,11 +48,11 @@ List<Widget> chartBlocs = [
       if (state is LoadedChartExpanseState) {
         return ChartCreator(
           state: state,
-          centerText: 'Expense',
+          centerText: 'Expense'.tr(),
         );
       }
-      return const Center(
-        child: Text("Empty data"),
+      return Center(
+        child: Text("Empty data".tr()),
       );
     }),
   ),

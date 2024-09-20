@@ -1,7 +1,7 @@
 {
-    "Total Expense": "Umumiy Xarajat",
-    "Total Salary": "Umumiy Maosh",
-    "Empty Data": "Bo'sh Ma'lumot",
+    "Total Expense": "Jami xarajatlar",
+    "Total Salary": "Jami maosh",
+    "Empty Data": "Bo'sh ma'lumot",
     "Settings": "Sozlamalar",
     "Language": "Til",
     "Cancel": "Bekor qilish",
@@ -10,5 +10,9 @@
     "Save": "Saqlash",
     "Category name": "Kategoriya nomi",
     "Edit": "Tahrirlash",
-    "Delete": "O'chirish"
+    "Delete": "O'chirish",
+    "Charts": "Grafiklar",
+    "Expense": "Xarajat",
+    "Income": "Daromad"
   }
+  

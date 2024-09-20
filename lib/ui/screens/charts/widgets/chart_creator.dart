@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:exam_6/data/models/cahrt_data.dart';
 import 'package:exam_6/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class ChartCreator extends StatefulWidget {
 
 class _ChartCreatorState extends State<ChartCreator> {
   List<ChartData> data = [
-    ChartData('No Data', 0, 0),
+    ChartData('Empty Data'.tr(), 0, 0),
   ];
   late TooltipBehavior _tooltip;
   @override
