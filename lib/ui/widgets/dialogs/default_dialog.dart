@@ -29,7 +29,7 @@ class DefaultDialog extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            child:  Text("Cancel".tr()))
+            child:  Text(context.tr("Cancel")))
       ],
     );
   }

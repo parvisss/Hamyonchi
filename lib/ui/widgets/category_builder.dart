@@ -72,7 +72,7 @@ class _CategoryBuilderState extends State<CategoryBuilder> {
                       child: TextFieldWidget(
                         keyboard: TextInputType.text,
                         controller: categoryController,
-                        hintText: 'Category name'.tr(),
+                        hintText: context.tr('Category name'),
                       ),
                     ),
                     actions: [
@@ -82,7 +82,7 @@ class _CategoryBuilderState extends State<CategoryBuilder> {
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            child:  Text("Cancel".tr()),
+                            child:  Text(context.tr("Cancel")),
                           ),
                           FilledButton(
                             onPressed: () {
@@ -98,7 +98,7 @@ class _CategoryBuilderState extends State<CategoryBuilder> {
 
                               Navigator.pop(context);
                             },
-                            child:  Text("Add".tr()),
+                            child:  Text(context.tr("Add")),
                           ),
                         ],
                       )

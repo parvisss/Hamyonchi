@@ -90,7 +90,7 @@ class ListBuilder extends StatelessWidget {
                             ),
                           );
                         },
-                        child:  Text("Edit".tr()),
+                        child:  Text(context.tr("Edit")),
                       ),
                       const SizedBox(
                         height: 10,
@@ -112,7 +112,7 @@ class ListBuilder extends StatelessWidget {
                               .read<CalculateIncomeBloc>()
                               .add(CalculateIncome());
                         },
-                        child:  Text('Delete'.tr()),
+                        child:  Text(context.tr('Delete')),
                       )
                     ],
                   ),

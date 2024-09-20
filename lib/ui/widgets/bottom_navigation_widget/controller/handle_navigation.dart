@@ -1,3 +1,4 @@
+import 'package:exam_6/ui/screens/calendar/calendar_screen.dart';
 import 'package:exam_6/ui/screens/charts/screen/chart_screen.dart';
 import 'package:exam_6/ui/screens/home/ui/screen/home_screen.dart';
 import 'package:exam_6/ui/screens/settings/ui/screens/settings_screen.dart';
@@ -12,7 +13,7 @@ handleNavigation(int index, BuildContext context) {
       const ChartScreen();
       break;
     case 2:
-      // Handle Notifications or other actions
+      CalendarScreen();
       break;
     case 3:
       const SettingsScreen();

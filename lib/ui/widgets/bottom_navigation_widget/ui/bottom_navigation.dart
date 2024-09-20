@@ -1,4 +1,5 @@
 import 'package:exam_6/ui/screens/add/add_screen.dart';
+import 'package:exam_6/ui/screens/calendar/calendar_screen.dart';
 import 'package:exam_6/ui/screens/charts/screen/chart_screen.dart';
 import 'package:exam_6/ui/screens/home/ui/screen/home_screen.dart';
 import 'package:exam_6/ui/screens/settings/ui/screens/settings_screen.dart';
@@ -22,11 +23,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return Scaffold(
       body: IndexedStack(
         index: current,
-        children: const [
-          HomeScreen(),
-          ChartScreen(),
-          SettingsScreen(),
-          SettingsScreen(),
+        children: [
+          const HomeScreen(),
+          const ChartScreen(),
+          CalendarScreen(),
+          const SettingsScreen(),
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

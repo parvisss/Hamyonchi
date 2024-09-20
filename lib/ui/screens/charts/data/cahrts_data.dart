@@ -24,11 +24,11 @@ List<Widget> chartBlocs = [
       if (state is LoadedChartIncomeState) {
         return ChartCreator(
           state: state,
-          centerText: 'Income'.tr(),
+          centerText: context.tr('Income'),
         );
       }
       return Center(
-        child: Text("Empty data".tr()),
+        child: Text(context.tr("Empty data")),
       );
     }),
   ),
@@ -48,11 +48,11 @@ List<Widget> chartBlocs = [
       if (state is LoadedChartExpanseState) {
         return ChartCreator(
           state: state,
-          centerText: 'Expense'.tr(),
+          centerText: context.tr('Expense'),
         );
       }
       return Center(
-        child: Text("Empty data".tr()),
+        child: Text(context.tr("Empty data")),
       );
     }),
   ),

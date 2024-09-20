@@ -46,11 +46,11 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: const Text("Hamyonchi"),
           centerTitle: false,
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.notifications_none_outlined))
-          ],
+          // actions: [
+          //   IconButton(
+          //       onPressed: () {},
+          //       icon: const Icon(Icons.notifications_none_outlined))
+          // ],
         ),
         body: CustomScrollView(
           slivers: [
@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             if (state is CalculateExpanseLoaded) {
                               return InkWell(
                                 child: CardWidget(
-                                  title: 'Total Expense'.tr(),
+                                  title: context.tr('Total Expense'),
                                   amount: state.summ,
                                   color: isEx
                                       ? AppColors.colorBlue
@@ -98,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             }
                             return InkWell(
                               child: CardWidget(
-                                title: 'Total Expense'.tr(),
+                                title: context.tr('Total Expense'),
                                 amount: '0',
                                 color: isEx
                                     ? AppColors.colorBlue
@@ -133,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             if (state is CalculateIncomeLoaded) {
                               return InkWell(
                                 child: CardWidget(
-                                  title: 'Total Salary'.tr(),
+                                  title: context.tr('Total Salary'),
                                   amount: state.summ,
                                   color: !isEx
                                       ? AppColors.colorBlue
@@ -148,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             }
                             return InkWell(
                               child: CardWidget(
-                                title: 'Total Salary'.tr(),
+                                title: context.tr('Total Salary'),
                                 amount: '0',
                                 color: !isEx
                                     ? AppColors.colorBlue
@@ -204,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           );
                         }
-                        return Center(child: Text('Empty Data'.tr()));
+                        return Center(child: Text(context.tr('Empty Data')));
                       },
                     ),
                   )
@@ -233,7 +233,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           );
                         }
-                        return Center(child: Text('Empty Data'.tr()));
+                        return Center(child: Text(context.tr('Empty Data')));
                       },
                     ),
                   ),
