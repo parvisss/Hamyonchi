@@ -1,6 +1,6 @@
 import 'package:exam_6/ui/screens/charts/screen/chart_screen.dart';
 import 'package:exam_6/ui/screens/home/ui/screen/home_screen.dart';
-import 'package:exam_6/ui/screens/settings_screen.dart';
+import 'package:exam_6/ui/screens/settings/ui/screens/settings_screen.dart';
 import 'package:flutter/material.dart';
 
 handleNavigation(int index, BuildContext context) {

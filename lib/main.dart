@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:exam_6/bloc/cahrt_expanse/chart_expanse_bloc.dart';
 import 'package:exam_6/bloc/calculate_expense/calculate_expanse_bloc.dart';
 import 'package:exam_6/bloc/calculate_incom/calculate_income_bloc.dart';
@@ -10,8 +11,21 @@ import 'package:exam_6/ui/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
-  runApp(const MainApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [
+        Locale('en'),
+        Locale('ru'),
+        Locale('uz'),
+      ],
+      fallbackLocale: const Locale('uz'),
+      path: 'assets/translations',
+      child: const MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {
@@ -31,6 +45,9 @@ class MainApp extends StatelessWidget {
         BlocProvider(create: (context) => ChartIncomeBloc()),
       ],
       child: MaterialApp(
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,

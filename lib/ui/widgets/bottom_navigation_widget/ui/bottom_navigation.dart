@@ -1,7 +1,7 @@
-import 'package:exam_6/ui/screens/add_screen.dart';
+import 'package:exam_6/ui/screens/add/add_screen.dart';
 import 'package:exam_6/ui/screens/charts/screen/chart_screen.dart';
 import 'package:exam_6/ui/screens/home/ui/screen/home_screen.dart';
-import 'package:exam_6/ui/screens/settings_screen.dart';
+import 'package:exam_6/ui/screens/settings/ui/screens/settings_screen.dart';
 import 'package:exam_6/ui/widgets/special/add_button.dart';
 import 'package:exam_6/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(
-        index: current, // Current index of the selected screen
+        index: current,
         children: const [
           HomeScreen(),
           ChartScreen(),
@@ -46,6 +46,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
             IconButton(
               icon: SvgPicture.asset(
                 'assets/svgs/bottom_navigation/home.svg',
+                color: current == 0
+                    ? AppColors.primaryColor1
+                    : AppColors
+                        .colorGreyMain, // Change color based on selection
               ),
               onPressed: () {
                 setState(() {
@@ -54,8 +58,13 @@ class _BottomNavigationState extends State<BottomNavigation> {
               },
             ),
             IconButton(
-              icon:
-                  Icon(Icons.pie_chart_outline, color: AppColors.colorGreyMain),
+              icon: Icon(
+                Icons.pie_chart_outline,
+                color: current == 1
+                    ? AppColors.primaryColor1
+                    : AppColors
+                        .colorGreyMain, // Change color based on selection
+              ),
               onPressed: () {
                 setState(() {
                   current = 1;
@@ -64,7 +73,13 @@ class _BottomNavigationState extends State<BottomNavigation> {
             ),
             const SizedBox(width: 40),
             IconButton(
-              icon: Icon(Icons.calendar_month, color: AppColors.colorGreyMain),
+              icon: Icon(
+                Icons.calendar_month,
+                color: current == 2
+                    ? AppColors.primaryColor1
+                    : AppColors
+                        .colorGreyMain, // Change color based on selection
+              ),
               onPressed: () {
                 setState(() {
                   current = 2;
@@ -74,6 +89,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
             IconButton(
               icon: SvgPicture.asset(
                 'assets/svgs/bottom_navigation/settings.svg',
+                color: current == 3
+                    ? AppColors.primaryColor1
+                    : AppColors
+                        .colorGreyMain, // Change color based on selection
               ),
               onPressed: () {
                 setState(() {

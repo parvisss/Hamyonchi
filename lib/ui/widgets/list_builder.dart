@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:exam_6/bloc/calculate_expense/calculate_expanse_bloc.dart';
 import 'package:exam_6/bloc/calculate_expense/calculate_expanse_event.dart';
 import 'package:exam_6/bloc/calculate_incom/calculate_income_bloc.dart';
@@ -7,7 +8,7 @@ import 'package:exam_6/bloc/expense/expense_event.dart';
 import 'package:exam_6/bloc/salary/salary_bloc.dart';
 import 'package:exam_6/bloc/salary/salary_event.dart';
 import 'package:exam_6/data/models/expense.dart';
-import 'package:exam_6/ui/screens/add_new.dart';
+import 'package:exam_6/ui/screens/add/add_new.dart';
 import 'package:exam_6/ui/widgets/dialogs/default_dialog.dart';
 import 'package:exam_6/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -89,7 +90,7 @@ class ListBuilder extends StatelessWidget {
                             ),
                           );
                         },
-                        child: const Text("Edit"),
+                        child:  Text("Edit".tr()),
                       ),
                       const SizedBox(
                         height: 10,
@@ -111,7 +112,7 @@ class ListBuilder extends StatelessWidget {
                               .read<CalculateIncomeBloc>()
                               .add(CalculateIncome());
                         },
-                        child: const Text('Delete'),
+                        child:  Text('Delete'.tr()),
                       )
                     ],
                   ),

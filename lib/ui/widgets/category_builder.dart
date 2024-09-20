@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:exam_6/ui/widgets/special/text_field_widget.dart';
 import 'package:exam_6/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -67,11 +68,11 @@ class _CategoryBuilderState extends State<CategoryBuilder> {
                 builder: (ctx) {
                   return AlertDialog(
                     content: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 40.0),
+                      padding:  const EdgeInsets.symmetric(vertical: 40.0),
                       child: TextFieldWidget(
                         keyboard: TextInputType.text,
                         controller: categoryController,
-                        hintText: 'Category name',
+                        hintText: 'Category name'.tr(),
                       ),
                     ),
                     actions: [
@@ -81,7 +82,7 @@ class _CategoryBuilderState extends State<CategoryBuilder> {
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            child: const Text("Cancel"),
+                            child:  Text("Cancel".tr()),
                           ),
                           FilledButton(
                             onPressed: () {
@@ -97,7 +98,7 @@ class _CategoryBuilderState extends State<CategoryBuilder> {
 
                               Navigator.pop(context);
                             },
-                            child: const Text("Add"),
+                            child:  Text("Add".tr()),
                           ),
                         ],
                       )

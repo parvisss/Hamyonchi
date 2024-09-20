@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:exam_6/bloc/calculate_expense/calculate_expanse_bloc.dart';
 import 'package:exam_6/bloc/calculate_expense/calculate_expanse_event.dart';
 import 'package:exam_6/bloc/calculate_expense/calculate_expanse_state.dart';
@@ -43,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
       padding: const EdgeInsets.only(top: 20.0),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Overview"),
+          title: const Text("Hamyonchi"),
           centerTitle: false,
           actions: [
             IconButton(
@@ -82,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             if (state is CalculateExpanseLoaded) {
                               return InkWell(
                                 child: CardWidget(
-                                  title: 'Total Expense',
+                                  title: 'Total Expense'.tr(),
                                   amount: state.summ,
                                   color: isEx
                                       ? AppColors.colorBlue
@@ -97,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             }
                             return InkWell(
                               child: CardWidget(
-                                title: 'Total Expense',
+                                title: 'Total Expense'.tr(),
                                 amount: '0',
                                 color: isEx
                                     ? AppColors.colorBlue
@@ -132,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             if (state is CalculateIncomeLoaded) {
                               return InkWell(
                                 child: CardWidget(
-                                  title: 'Total Salary',
+                                  title: 'Total Salary'.tr(),
                                   amount: state.summ,
                                   color: !isEx
                                       ? AppColors.colorBlue
@@ -147,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             }
                             return InkWell(
                               child: CardWidget(
-                                title: 'Total Salary',
+                                title: 'Total Salary'.tr(),
                                 amount: '0',
                                 color: !isEx
                                     ? AppColors.colorBlue
@@ -203,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           );
                         }
-                        return const Center(child: Text('Empty Data'));
+                        return Center(child: Text('Empty Data'.tr()));
                       },
                     ),
                   )
@@ -232,7 +233,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           );
                         }
-                        return const Center(child: Text('Empty Data'));
+                        return Center(child: Text('Empty Data'.tr()));
                       },
                     ),
                   ),

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class DefaultDialog extends StatelessWidget {
@@ -28,7 +29,7 @@ class DefaultDialog extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Text("Cancel"))
+            child:  Text("Cancel".tr()))
       ],
     );
   }
