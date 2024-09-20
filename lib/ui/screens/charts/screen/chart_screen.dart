@@ -37,7 +37,7 @@ class _ChartScreenState extends State<ChartScreen> {
       padding: const EdgeInsets.only(top: 20.0),
       child: Scaffold(
         appBar: AppBar(
-          title:  Text('Charts'.tr()),
+          title: Text('Charts'.tr()),
         ),
         body: Column(
           children: [
