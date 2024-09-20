@@ -46,11 +46,6 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: const Text("Hamyonchi"),
           centerTitle: false,
-          // actions: [
-          //   IconButton(
-          //       onPressed: () {},
-          //       icon: const Icon(Icons.notifications_none_outlined))
-          // ],
         ),
         body: CustomScrollView(
           slivers: [

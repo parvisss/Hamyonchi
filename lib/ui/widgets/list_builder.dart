@@ -14,7 +14,7 @@ import 'package:exam_6/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ListBuilder extends StatelessWidget {
+class ListBuilder extends StatefulWidget {
   // ignore: prefer_typing_uninitialized_variables
   final bool isMain;
   final bool isEx;
@@ -24,21 +24,29 @@ class ListBuilder extends StatelessWidget {
       required this.state,
       required this.isMain,
       required this.isEx});
+
+  @override
+  State<ListBuilder> createState() => _ListBuilderState();
+}
+
+class _ListBuilderState extends State<ListBuilder> {
   final categoryController = TextEditingController();
+
   final summController = TextEditingController();
+
   final descriptionController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-      itemCount: isMain
-          ? state.list.length
-          : state.list.length >= 3
+      itemCount: widget.isMain
+          ? widget.state.list.length
+          : widget.state.list.length >= 3
               ? 3
-              : state.list.length,
+              : widget.state.list.length,
       itemBuilder: (ctx, index) {
-        Expense expense = state.list[index];
+        Expense expense = widget.state.list[index];
         return InkWell(
           child: ListTile(
             title: Text(
@@ -47,7 +55,7 @@ class ListBuilder extends StatelessWidget {
             ),
             subtitle: Text(
                 "${DateTime.parse(expense.date).day}-${DateTime.parse(expense.date).month}-${DateTime.parse(expense.date).year}"),
-            trailing: isEx
+            trailing: widget.isEx
                 ? Text(
                     "-\$${expense.summ}",
                     style: TextStyle(fontSize: 22, color: AppColors.coloRred),
@@ -85,19 +93,19 @@ class ListBuilder extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (ctx) => AddNew(
                                 expense: expense,
-                                isEx: isEx,
+                                isEx: widget.isEx,
                               ),
                             ),
                           );
                         },
-                        child:  Text(context.tr("Edit")),
+                        child: Text(context.tr("Edit")),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       FilledButton(
                         onPressed: () async {
-                          isEx
+                          widget.isEx
                               ? context
                                   .read<ExpenseBloc>()
                                   .add(DeleteExpense(expense: expense))
@@ -112,7 +120,7 @@ class ListBuilder extends StatelessWidget {
                               .read<CalculateIncomeBloc>()
                               .add(CalculateIncome());
                         },
-                        child:  Text(context.tr('Delete')),
+                        child: Text(context.tr('Delete')),
                       )
                     ],
                   ),

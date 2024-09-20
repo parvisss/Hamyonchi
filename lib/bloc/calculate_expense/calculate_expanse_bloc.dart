@@ -13,7 +13,7 @@ class CalculateExpanseBloc
   }
 
   final DatabaseHelper databaseEx = DatabaseHelper();
-  final DatabaseHelper2 databaseIn = DatabaseHelper2(tableName: 'Salary');
+  final DatabaseHelper2 databaseIn = DatabaseHelper2(tableName: 'Expense');
 
   Future<void> _calculate(
       CalculateExpanse event, Emitter<CalculateExpanseState> emit) async {

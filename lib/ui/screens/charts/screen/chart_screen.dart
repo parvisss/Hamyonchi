@@ -21,6 +21,7 @@ class _ChartScreenState extends State<ChartScreen> {
   void initState() {
     context.read<ChartExpanseBloc>().add(CalculateChartExpanseEvent());
     context.read<ChartIncomeBloc>().add(CalculateChartIncomeEvent());
+    
     _pageController = PageController(initialPage: 0);
     super.initState();
   }
@@ -37,7 +38,7 @@ class _ChartScreenState extends State<ChartScreen> {
       padding: const EdgeInsets.only(top: 20.0),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Charts'.tr()),
+          title: Text(context.tr('Charts')),
         ),
         body: Column(
           children: [

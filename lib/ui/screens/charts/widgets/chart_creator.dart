@@ -1,7 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:exam_6/bloc/cahrt_expanse/chart_expanse_bloc.dart';
+import 'package:exam_6/bloc/cahrt_expanse/chart_expanse_event.dart';
+import 'package:exam_6/bloc/chart_income/chart_income_bloc.dart';
+import 'package:exam_6/bloc/chart_income/chart_income_event.dart';
 import 'package:exam_6/data/models/cahrt_data.dart';
 import 'package:exam_6/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class ChartCreator extends StatefulWidget {
@@ -21,6 +26,8 @@ class _ChartCreatorState extends State<ChartCreator> {
   late TooltipBehavior _tooltip;
   @override
   void initState() {
+    context.read<ChartExpanseBloc>().add(CalculateChartExpanseEvent());
+    context.read<ChartIncomeBloc>().add(CalculateChartIncomeEvent());
     _tooltip = TooltipBehavior(enable: true);
     super.initState();
   }
