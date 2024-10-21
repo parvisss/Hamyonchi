@@ -21,13 +21,11 @@ class ChartCreator extends StatefulWidget {
 
 class _ChartCreatorState extends State<ChartCreator> {
   List<ChartData> data = [
-    ChartData('Empty Data'.tr(), 0, 0),
+    ChartData('Empty Data', 0, 0),
   ];
   late TooltipBehavior _tooltip;
   @override
   void initState() {
-    context.read<ChartExpanseBloc>().add(CalculateChartExpanseEvent());
-    context.read<ChartIncomeBloc>().add(CalculateChartIncomeEvent());
     _tooltip = TooltipBehavior(enable: true);
     super.initState();
   }

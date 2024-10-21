@@ -41,7 +41,7 @@ class MainApp extends StatelessWidget {
         BlocProvider(create: (context) => SalaryBloc()),
         BlocProvider(create: (context) => CalculateIncomeBloc()),
         BlocProvider(create: (context) => SalaryCategoryBloc()),
-        BlocProvider(create: (context) => ChartExpanseBloc()),
+        BlocProvider(create: (context) => ChartExpanseBloc()),  
         BlocProvider(create: (context) => ChartIncomeBloc()),
       ],
       child: MaterialApp(

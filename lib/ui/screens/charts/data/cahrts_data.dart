@@ -11,11 +11,11 @@ List<Widget> chartBlocs = [
   SizedBox(
     child: BlocBuilder<ChartIncomeBloc, ChartIncomeState>(
         builder: (context, state) {
-      if (state is LoadingChartIncomeState) {
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
-      }
+      // if (state is LoadingChartIncomeState) {
+      //   return const Center(
+      //     child: CircularProgressIndicator(),
+      //   );
+      // }
       if (state is ErrorChartIncomeState) {
         return Center(
           child: Text(state.message),

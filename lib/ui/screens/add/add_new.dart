@@ -1,7 +1,11 @@
+import 'package:exam_6/bloc/cahrt_expanse/chart_expanse_bloc.dart';
+import 'package:exam_6/bloc/cahrt_expanse/chart_expanse_event.dart';
 import 'package:exam_6/bloc/calculate_expense/calculate_expanse_bloc.dart';
 import 'package:exam_6/bloc/calculate_expense/calculate_expanse_event.dart';
 import 'package:exam_6/bloc/calculate_incom/calculate_income_bloc.dart';
 import 'package:exam_6/bloc/calculate_incom/calculate_income_event.dart';
+import 'package:exam_6/bloc/chart_income/chart_income_bloc.dart';
+import 'package:exam_6/bloc/chart_income/chart_income_event.dart';
 import 'package:exam_6/bloc/expense/expense_bloc.dart';
 import 'package:exam_6/bloc/expense/expense_event.dart';
 import 'package:exam_6/bloc/expense_category/expense_category_bloc.dart';
@@ -226,6 +230,8 @@ class _AddNewState extends State<AddNew> {
 
             context.read<CalculateExpanseBloc>().add(CalculateExpanse());
             context.read<CalculateIncomeBloc>().add(CalculateIncome());
+            context.read<ChartExpanseBloc>().add(CalculateChartExpanseEvent());
+            context.read<ChartIncomeBloc>().add(CalculateChartIncomeEvent());
             summController.text = '';
             descriptionController.text = '';
             Navigator.pop(context);
